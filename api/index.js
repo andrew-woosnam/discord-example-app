@@ -6,21 +6,16 @@ import {
 } from 'discord-interactions';
 import { VerifyDiscordRequest, getRandomEmoji, DiscordRequest } from '../utils.js';
 
-// Create an express app
 const app = express();
-// Get port, or default to 3000
 const PORT = process.env.PORT || 3000;
-// Middleware to verify requests
 app.use(express.json({
   verify: VerifyDiscordRequest(process.env.PUBLIC_KEY)
 }));
 
-// Define a GET endpoint
 app.get('/', (req, res) => {
   res.send('Hello, this is a simple Express API!');
 });
 
-// Interactions endpoint
 app.post('/interactions', async function (req, res) {
   const { type, id, data } = req.body;
   console.log('Received interaction:', req.body);
