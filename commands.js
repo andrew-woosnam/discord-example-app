@@ -1,5 +1,4 @@
 import 'dotenv/config';
-import { getRPSChoices } from './game.js';
 import { capitalize, InstallGlobalCommands } from './utils.js';
 
 // Get the game choices from game.js
@@ -25,21 +24,12 @@ const TEST_COMMAND = {
 };
 
 // Command containing options
-const CHALLENGE_COMMAND = {
-  name: 'challenge',
-  description: 'Challenge to a match of rock paper scissors',
-  options: [
-    {
-      type: 3,
-      name: 'object',
-      description: 'Pick your object',
-      required: true,
-      choices: createCommandChoices(),
-    },
-  ],
+const JOIN_COMMAND = {
+  name: 'join',
+  description: 'Join voice channel',
   type: 1,
 };
 
-const ALL_COMMANDS = [TEST_COMMAND, CHALLENGE_COMMAND];
+export const ALL_COMMANDS = [TEST_COMMAND, JOIN_COMMAND];
 
 InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

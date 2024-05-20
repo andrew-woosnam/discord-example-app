@@ -7,6 +7,7 @@ import {
 import { Client, GatewayIntentBits } from 'discord.js';
 import { joinVoiceChannel, VoiceConnectionStatus } from '@discordjs/voice';
 import { VerifyDiscordRequest, getRandomEmoji } from '../utils.js';
+import { ALL_COMMANDS } from '../commands.js';
 
 // Create an Express app
 const app = express();
@@ -31,7 +32,7 @@ client.once('ready', () => {
 
 // Define a GET endpoint
 app.get('/', (req, res) => {
-  res.send('Hello, this is a simple Express API!');
+  res.send(ALL_COMMANDS.map(command => command.name).join(', '));
 });
 
 // Interactions endpoint
