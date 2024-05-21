@@ -1,5 +1,5 @@
 import { InteractionType, InteractionResponseType } from 'discord-interactions';
-import { handleJoin } from './handlers/handleJoin.js';
+import { handleJoin } from './botInteractions/handleJoin.js';
 
 export async function handleInteraction(req, res) {
     try {
