@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from 'express';
 import { VerifyDiscordRequest } from './utils.js';
-import { handleInteraction } from './handlers/interactionHandler.js';
+import { handleInteraction } from './interactionHandler.js';
 import { ALL_COMMANDS } from './commands.js';
 import './bot.js'; // Ensure the bot client is initialized
 
